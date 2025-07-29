@@ -1,154 +1,96 @@
-# Codex - AI-Powered Code Analysis Platform
+# Codex: Your AI-Powered GitHub Repository Assistant
 
-A comprehensive web application that provides AI-powered code analysis, documentation generation, and repository insights.
+Codex is a powerful web application designed to simplify and enhance your interaction with GitHub repositories. It provides intelligent tools for generating README files, summarizing code, and querying codebases directly. Key features include secure user authentication, a user-friendly interface, and integration with various AI models for advanced code analysis. Codex leverages a robust backend to provide efficient and reliable services.
 
-## Features
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-- **File Summarization**: AI-powered analysis and summarization of code files
-- **README Generation**: Automatic README file generation for repositories
-- **Dependency Graph Visualization**: Interactive visualization of project dependencies
-- **GitHub Repository Analysis**: Parse and analyze GitHub repositories
-- **User Authentication**: Secure user registration and login system
-- **Graph Visualization**: Interactive network graphs for code relationships
+## 🚀 Features
 
-## Project Structure
+- **README Generator**: Automatically generates comprehensive README files for any GitHub repository, including detailed descriptions and dependency lists.
+- **Code Summarizer**: Quickly generates concise summaries of individual files or entire repositories, saving you time and effort.
+- **Code Querying**: Allows users to ask natural language questions about a repository's codebase and receive accurate answers.
+- **User Authentication**: Securely manages user accounts and protects access to sensitive features.
 
-```
-├── client/                 # React frontend (Vite + React)
-│   ├── src/
-│   │   ├── components/    # Reusable React components
-│   │   ├── pages/         # Application pages
-│   │   └── utils/         # Utility functions
-│   └── public/            # Static assets
-├── flask-ai/              # Python Flask backend with AI features
-│   ├── app.py            # Main Flask application
-│   ├── github_parser.py  # GitHub repository parsing
-│   ├── file_summarizer.py # AI file summarization
-│   ├── readme_generator.py # README generation
-│   ├── dependency_graph.py # Dependency analysis
-│   └── embedding_store.py # Vector embeddings storage
-├── server/                # Node.js authentication server
-│   ├── routes/           # API routes
-│   └── models/           # Database models
-└── lib/                  # External libraries and dependencies
-```
-
-## Tech Stack
+## 🛠️ Technology Stack
 
 ### Frontend
-- **React** with Vite for fast development
-- **CSS3** for styling
-- **Vis.js** for graph visualization
+React, React Router, Axios, Lucide-React, React Markdown, Remark-GFM, CSS
 
 ### Backend
-- **Flask** (Python) for AI services
-- **Node.js** with Express for authentication
-- **LlamaIndex** for AI-powered analysis
-- **ChromaDB** for vector storage
-- **PyVis** for graph generation
+Flask, Python, Llama, ChromaDB, PyMongo, Google Generative AI, Node.js, Express.js, Mongoose, MongoDB
 
-### AI/ML
-- **LlamaIndex** for document processing
-- **OpenAI/Hugging Face** models for text analysis
-- **Vector embeddings** for semantic search
+## 📁 Project Structure
 
-## Setup and Installation
-
-### Prerequisites
-- Node.js (v14 or higher)
-- Python 3.8+
-- Git
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Vasita27/Codex.git
-cd Codex
+```
+├── client
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── src
+│   │   ├── App.jsx
+│   │   ├── components
+│   │   │   ├── GraphViewer.jsx
+│   │   │   └── PrivateRoute.jsx
+│   │   ├── main.jsx
+│   │   ├── pages
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── FileToFileSummarizer.jsx
+│   │   │   ├── GraphPage.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── MainPage.jsx
+│   │   │   ├── ReadmeGenerator.jsx
+│   │   │   └── Signup.jsx
+│   │   └── utils
+│   │       └── auth.js
+│   └── vite.config.js
+├── flask-ai
+│   ├── app.py
+│   ├── dependency_graph.py
+│   ├── embedding_store.py
+│   ├── file_summarizer.py
+│   ├── github_parser.py
+│   ├── lib
+│   │   ├── bindings
+│   │   │   └── utils.js
+│   │   ├── tom-select
+│   │   │   └── tom-select.complete.min.js
+│   │   └── vis-9.1.2
+│   │       └── vis-network.min.js
+│   ├── package.json
+│   ├── readme_generator.py
+│   └── static
+│       └── repo_graph.html
+└── server
+    ├── index.js
+    ├── models
+    │   └── User.js
+    ├── package.json
+    └── routes
+        └── auth.js
 ```
 
-### 2. Setup Backend (Flask AI)
-```bash
-cd flask-ai
-pip install -r requirements.txt
-python app.py
-```
+## 💻 Usage
 
-### 3. Setup Authentication Server
-```bash
-cd server
-npm install
-npm start
-```
+- **README Generator**: Enter a GitHub repository URL, and Codex will generate a README file. You can then download or copy or preview the generated README.
+- **Code Summarizer**: Provide a GitHub repository URL, and Codex will generate file to file summaries. Download the summaries as a PDF.
+- **Code Querying**: Input a repository URL, select a branch, ask your code related question and receive relevant answers.
+- **User Authentication**: Create an account or log in to access the application's features.
 
-### 4. Setup Frontend
-```bash
-cd client
-npm install
-npm run dev
-```
+## 🚀 Installation
 
-## Environment Variables
+### Backend (Flask)
+Navigate to the flask-ai directory. Install dependencies using `pip install -r requirements.txt`. Run the application using `python app.py`.
 
-Create `.env` files in the respective directories:
+### Frontend (React)
+Navigate to the client directory. Install dependencies using `npm install`. Run the application using `npm run dev`.
 
-### flask-ai/.env
-```
-OPENAI_API_KEY=your_openai_api_key
-GITHUB_TOKEN=your_github_token
-```
+### Backend (Node.js)
+Navigate to the server directory. Install dependencies using `npm install`. Run the application using `node index.js`.
 
-### server/.env
-```
-JWT_SECRET=your_jwt_secret
-DATABASE_URL=your_database_url
-```
+## 📄 License
 
-## Usage
-
-1. **Start all services** in the following order:
-   - Flask AI backend: `python flask-ai/app.py`
-   - Authentication server: `npm start` in server/
-   - Frontend: `npm run dev` in client/
-
-2. **Access the application** at `http://localhost:5173`
-
-3. **Key Features**:
-   - Upload or link GitHub repositories for analysis
-   - Generate comprehensive README files
-   - Visualize project dependencies
-   - Get AI-powered file summaries
-
-## API Endpoints
-
-### Flask AI Service
-- `POST /summarize` - Summarize code files
-- `POST /generate-readme` - Generate README files
-- `GET /dependency-graph` - Get dependency visualization
-- `POST /parse-github` - Parse GitHub repositories
-
-### Authentication Service
-- `POST /auth/register` - User registration
-- `POST /auth/login` - User login
-- `GET /auth/verify` - Token verification
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- LlamaIndex for AI document processing
-- Vis.js for graph visualization
-- React and Vite for the frontend framework
-- Flask for the backend API
-
----
-
-**Note**: Make sure to set up your API keys and environment variables before running the application.
+This project is licensed under the MIT License.
