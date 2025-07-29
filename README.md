@@ -1,4 +1,4 @@
-# Codex - AI-Powered Code Analysis Platform
+# Codex - AI-Powered Github repository Assistant
 
 A comprehensive web application that provides AI-powered code analysis, documentation generation, and repository insights.
 
