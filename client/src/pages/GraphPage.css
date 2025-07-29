@@ -1,0 +1,36 @@
+.graph-page {
+  padding: 2rem;
+  background-color: #121212;
+  color: #f0f0f0;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.graph-page input {
+  width: 60%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.graph-page button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.graph-page button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 1rem;
+}
